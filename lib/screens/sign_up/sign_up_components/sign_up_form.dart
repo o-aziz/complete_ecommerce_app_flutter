@@ -1,24 +1,22 @@
 import 'package:ecommerce_app2/components/components.dart';
-import 'package:ecommerce_app2/screens/forgot_password/forgot_password_screen.dart';
-import 'package:ecommerce_app2/screens/login_success/login_success_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
 
-class SignForm extends StatefulWidget {
-  const SignForm({Key? key}) : super(key: key);
+class SignUpForm extends StatefulWidget {
+  const SignUpForm({Key? key}) : super(key: key);
 
   @override
-  _SignFormState createState() => _SignFormState();
+  _SignUpFormState createState() => _SignUpFormState();
 }
 
-class _SignFormState extends State<SignForm> {
+class _SignUpFormState extends State<SignUpForm> {
   final _formKey = GlobalKey<FormState>();
-  List<String> errors = [];
   String email = "";
   String password = "";
-  bool remember = false;
+  String confirmPassword = "";
+  final List<String> errors = [];
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -29,43 +27,51 @@ class _SignFormState extends State<SignForm> {
           SizedBox(height: getProportionateScreenHeight(30)),
           buildPasswordFormField(),
           SizedBox(height: getProportionateScreenHeight(30)),
-          Row(
-            children: [
-              Checkbox(
-                  activeColor: kPrimaryColor,
-                  value: remember,
-                  onChanged: (value) {
-                    setState(() {
-                      remember = value!;
-                    });
-                  }),
-              const Text("Remember me"),
-              const Spacer(),
-              GestureDetector(
-                onTap: () => Navigator.pushNamed(
-                    context, ForgotPasswordScreen.routeName),
-                child: const Text(
-                  "Forgot password",
-                  style: TextStyle(
-                    decoration: TextDecoration.underline,
-                  ),
-                ),
-              )
-            ],
-          ),
+          buildConfPassFormField(),
           FromError(errors: errors),
-          SizedBox(height: getProportionateScreenHeight(20)),
+          SizedBox(height: getProportionateScreenHeight(40)),
           DefaultButton(
-            text: 'Continue',
-            pressed: () {
-              if (_formKey.currentState!.validate()) {
-                _formKey.currentState!.save();
-                // if all the info are valid then go to login_success_screen
-                Navigator.pushNamed(context, LoginSuccessScreen.routeName);
-              }
-            },
-          )
+              text: "Continue",
+              pressed: () {
+                if (_formKey.currentState!.validate()) {
+                  // go to copmlete profile page:
+                }
+              })
         ],
+      ),
+    );
+  }
+
+  TextFormField buildConfPassFormField() {
+    return TextFormField(
+      onSaved: (newValue) => confirmPassword = newValue!,
+      onChanged: (value) {
+        if (password == confirmPassword) {
+          setState(() {
+            errors.remove(kPassNullError);
+          });
+        }
+      },
+      validator: (value) {
+        if (value!.isEmpty) {
+          return "";
+        } else if (password != confirmPassword) {
+          setState(() {
+            errors.add(kMatchPassError);
+          });
+          return "";
+        }
+        return null;
+      },
+      obscureText: true,
+      keyboardType: TextInputType.emailAddress,
+      decoration: const InputDecoration(
+        labelText: "Confirm Password",
+        hintText: "Re-enter your password",
+        floatingLabelBehavior: FloatingLabelBehavior.always,
+        suffixIcon: CustomSuffixIcon(
+          icon: "assets/icons/Lock.svg",
+        ),
       ),
     );
   }
@@ -83,6 +89,7 @@ class _SignFormState extends State<SignForm> {
             errors.remove(kShortPassError);
           });
         }
+        password = value;
       },
       validator: (value) {
         if (value!.isEmpty && !errors.contains(kPassNullError)) {
