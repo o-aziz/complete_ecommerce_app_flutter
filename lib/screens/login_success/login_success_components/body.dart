@@ -3,6 +3,8 @@ import 'package:ecommerce_app2/size_config.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../../constants.dart';
+
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);
 
@@ -18,11 +20,7 @@ class Body extends StatelessWidget {
         SizedBox(height: SizeConfig.screenHeight * 0.04),
         Text(
           "Login Success",
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: getProportionateScreenWidth(30),
-            fontWeight: FontWeight.bold,
-          ),
+          style: headingStyle,
         ),
         const Spacer(),
         SizedBox(

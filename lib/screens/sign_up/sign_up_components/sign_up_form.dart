@@ -1,4 +1,5 @@
 import 'package:ecommerce_app2/components/components.dart';
+import 'package:ecommerce_app2/screens/complete_profile/complete_profile_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../../constants.dart';
@@ -35,6 +36,7 @@ class _SignUpFormState extends State<SignUpForm> {
               pressed: () {
                 if (_formKey.currentState!.validate()) {
                   // go to copmlete profile page:
+                  Navigator.pushNamed(context, CompleteProfileScreen.routeName);
                 }
               })
         ],
@@ -55,7 +57,7 @@ class _SignUpFormState extends State<SignUpForm> {
       validator: (value) {
         if (value!.isEmpty) {
           return "";
-        } else if (password != confirmPassword) {
+        } else if (password != value) {
           setState(() {
             errors.add(kMatchPassError);
           });

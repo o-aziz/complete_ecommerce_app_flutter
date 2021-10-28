@@ -4,6 +4,8 @@ import 'package:ecommerce_app2/size_config.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../../constants.dart';
+
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);
 
@@ -21,11 +23,7 @@ class Body extends StatelessWidget {
                 SizedBox(height: SizeConfig.screenHeight * 0.04),
                 Text(
                   "Welcome Back",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: getProportionateScreenWidth(28),
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: headingStyle,
                 ),
                 const Text(
                   "Sign in with your email and password \nor continue with social media",
