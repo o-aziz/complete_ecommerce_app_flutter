@@ -1,4 +1,5 @@
 import 'package:ecommerce_app2/components/components.dart';
+import 'package:ecommerce_app2/screens/otp/otp_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../../constants.dart';
@@ -38,6 +39,7 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
             pressed: () {
               if (_formKey.currentState!.validate()) {
                 // go to OTP page:
+                Navigator.pushNamed(context, OtpScreen.routeName);
               }
             },
           )

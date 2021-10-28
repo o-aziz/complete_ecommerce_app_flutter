@@ -1,4 +1,3 @@
-import 'package:ecommerce_app2/components/components.dart';
 import 'package:ecommerce_app2/constants.dart';
 import 'package:ecommerce_app2/screens/complete_profile/complete_profile_components/complete_profile_components.dart';
 import 'package:ecommerce_app2/size_config.dart';
