@@ -1,4 +1,4 @@
-import 'package:ecommerce_app2/screens/sign_in/sign_in_components/sign_in_components.dart';
+import 'package:ecommerce_app2/screens/sign_in/components/components.dart';
 import 'package:flutter/material.dart';
 
 class SignInScreen extends StatelessWidget {

@@ -1,4 +1,4 @@
-import 'package:ecommerce_app2/screens/otp/otp_components/otp_components.dart';
+import 'package:ecommerce_app2/screens/otp/components/components.dart';
 import 'package:flutter/material.dart';
 
 class OtpScreen extends StatelessWidget {

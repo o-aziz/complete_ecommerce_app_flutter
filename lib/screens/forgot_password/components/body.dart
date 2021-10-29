@@ -1,4 +1,4 @@
-import 'package:ecommerce_app2/screens/forgot_password/forgot_passwoed_components/forgot_password_components.dart';
+import 'package:ecommerce_app2/screens/forgot_password/components/components.dart';
 import 'package:ecommerce_app2/size_config.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

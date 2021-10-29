@@ -1,4 +1,4 @@
-import 'package:ecommerce_app2/screens/login_success/login_success_components/login_success_components.dart';
+import 'package:ecommerce_app2/screens/login_success/components/components.dart';
 import 'package:flutter/material.dart';
 
 class LoginSuccessScreen extends StatelessWidget {

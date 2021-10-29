@@ -1,5 +1,5 @@
 import 'package:ecommerce_app2/components/components.dart';
-import 'package:ecommerce_app2/screens/sign_up/sign_up_components/sign_up_components.dart';
+import 'package:ecommerce_app2/screens/sign_up/components/components.dart';
 import 'package:ecommerce_app2/size_config.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
