@@ -18,6 +18,7 @@ class Body extends StatelessWidget {
             const DiscountBanner(),
             SizedBox(height: getProportionateScreenWidth(30)),
             Categories(),
+            const SpecialOffers()
           ],
         ),
       ),
