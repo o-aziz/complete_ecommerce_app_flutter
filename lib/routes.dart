@@ -1,4 +1,5 @@
 import 'package:ecommerce_app2/screens/complete_profile/complete_profile_screen.dart';
+import 'package:ecommerce_app2/screens/details/details_screen.dart';
 import 'package:ecommerce_app2/screens/forgot_password/forgot_password_screen.dart';
 import 'package:ecommerce_app2/screens/home/home_screen.dart';
 import 'package:ecommerce_app2/screens/login_success/login_success_screen.dart';
@@ -16,5 +17,6 @@ final Map<String, WidgetBuilder> routes = {
   SignUpScreen.routeName: (context) => const SignUpScreen(),
   CompleteProfileScreen.routeName: (context) => const CompleteProfileScreen(),
   OtpScreen.routeName: (context) => const OtpScreen(),
-  HomeScreen.routeName: (context) => const HomeScreen()
+  HomeScreen.routeName: (context) => const HomeScreen(),
+  DetailsScreen.routeName: (context) => const DetailsScreen()
 };
